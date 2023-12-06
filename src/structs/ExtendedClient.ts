@@ -2,10 +2,11 @@ import { Client, Partials, IntentsBitField, BitFieldResolvable, GatewayIntentsSt
 import dotenv from "dotenv";
 dotenv.config();
 
+//é o client com algumas propriedades a mais
 export class ExtendedClient extends Client {
   constructor() {
     super({
-      //malicia para adicionar todos os intents
+      //malícia para adicionar todos os intents
       intents: Object.keys(IntentsBitField.Flags) as BitFieldResolvable<GatewayIntentsString, number>,
       
       //todos os partials também
