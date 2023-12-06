@@ -6,10 +6,8 @@ export class ExtendedClient extends Client {
   constructor() {
     super({
       //malicia para adicionar todos os intents
-      intents: [
-        "GuildMembers",
-        "GuildMessages"
-      ],
+      intents: Object.keys(IntentsBitField.Flags) as BitFieldResolvable<GatewayIntentsString, number>,
+      
       //todos os partials também
       partials: [
         Partials.Channel, Partials.GuildMember, Partials.GuildScheduledEvent,
