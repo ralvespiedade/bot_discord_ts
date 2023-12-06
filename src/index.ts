@@ -1,12 +1,13 @@
-import { Message } from "discord.js";
 import { ExtendedClient } from "./structs/ExtendedClient"
+
+import config from "./structs/config.json"
 export * from "colors";
 
 const client = new ExtendedClient();
 
 client.start();
 
-export { client }
+export { client, config }
 
 client.on("ready", ()=> {
   console.log('Bot online!'.green)
@@ -39,3 +40,4 @@ client.on("guildMemberAdd", (event) => {
     content: `'${nomeGlobal}' seja bem vindo(a)`
   })
 })
+
