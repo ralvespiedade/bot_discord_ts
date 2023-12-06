@@ -1,3 +1,4 @@
+import { Message } from "discord.js";
 import { ExtendedClient } from "./structs/ExtendedClient"
 export * from "colors";
 
@@ -26,9 +27,15 @@ client.on("messageCreate", (message) => {
   message.reply({
     content: `Olá, ${message.author.username}`
   })
+
 })
-/* 
+
 client.on("guildMemberAdd", (event) => {
-  console.log('Dentro do evento de Adição de Usuário.')
-  console.log(event)
-}) */
+  const nomeGlobal = event.user.globalName
+  console.log(`${nomeGlobal} foi adicionado(a) ao servidor!`)
+  
+  //manda uma mesagem direta para o novo usuário.
+  event.send({
+    content: `'${nomeGlobal}' seja bem vindo(a)`
+  })
+})
