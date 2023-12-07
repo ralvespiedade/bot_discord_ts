@@ -1,9 +1,15 @@
-import { Client, Partials, IntentsBitField, BitFieldResolvable, GatewayIntentsString } from "discord.js";
+import { Client, Collection, Partials, IntentsBitField, BitFieldResolvable, GatewayIntentsString } from "discord.js";
 import dotenv from "dotenv";
+import { CommandType, ComponentsButton, ComponentsSelect, ComponentsModal } from "./types/Commands";
 dotenv.config();
 
 //é o client com algumas propriedades a mais
 export class ExtendedClient extends Client {
+  public commands: Collection<string, CommandType> = new Collection();
+  public buttons: ComponentsButton = new Collection();
+  public selects: ComponentsSelect = new Collection();
+  public modals: ComponentsModal = new Collection();
+  
   constructor() {
     super({
       //malícia para adicionar todos os intents
