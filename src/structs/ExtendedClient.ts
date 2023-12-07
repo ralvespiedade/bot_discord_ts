@@ -9,7 +9,7 @@ export class ExtendedClient extends Client {
   public buttons: ComponentsButton = new Collection();
   public selects: ComponentsSelect = new Collection();
   public modals: ComponentsModal = new Collection();
-  
+
   constructor() {
     super({
       //malícia para adicionar todos os intents
@@ -25,4 +25,6 @@ export class ExtendedClient extends Client {
   public start() {
     this.login(process.env.BOT_TOKEN);
   }
+
+  //private registerCommands(commands: Array)
 }
