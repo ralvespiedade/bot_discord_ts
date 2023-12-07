@@ -32,6 +32,7 @@ export class ExtendedClient extends Client {
 
   public start() {
     this.registerModules();
+    this.registerEvents();
     this.login(process.env.BOT_TOKEN);
   }
 
