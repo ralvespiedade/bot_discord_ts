@@ -9,9 +9,6 @@ client.start();
 
 export { client, config }
 
-client.on("ready", ()=> {
-  console.log('Bot online!'.green)
-})
 
 client.on("messageCreate", (message) => {
   if (message.author.bot) return;
